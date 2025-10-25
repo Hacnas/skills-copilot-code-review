@@ -311,8 +311,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function escapeHtml(text) {
-    const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
-    return String(text).replace(/[&<>"']/g, (m) => map[m]);
+    const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;', '`': '&#96;' };
+    return String(text).replace(/[&<>"'`]/g, (m) => map[m]);
   }
 
   // ============ Announcements Management (Auth only) ============
