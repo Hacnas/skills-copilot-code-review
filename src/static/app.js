@@ -408,7 +408,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function startEditAnnouncement(id, list) {
-    const item = list.find((x) => x.id === id);
+    const item = list.find((x) => String(x.id) === id);
     if (!item) return;
     showAnnouncementForm(true, item);
   }
