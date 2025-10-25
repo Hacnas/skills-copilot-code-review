@@ -34,7 +34,7 @@ def get_active_announcements(now: Optional[str] = Query(None)) -> List[Dict[str,
 
     - now: optional ISO datetime to evaluate against (defaults to current UTC time).
     """
-    reference = datetime.fromisoformat(now) if now else datetime.utcnow()
+    reference = _parse_datetime(now) if now else datetime.utcnow()
 
     query = {
         "$and": [
