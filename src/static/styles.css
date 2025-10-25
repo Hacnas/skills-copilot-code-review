@@ -664,11 +664,101 @@ footer {
 #logout-button:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
-
+/* Legacy announcement banner class (kept for compatibility) */
 .announcement-banner {
   background-color: #4caf50;
   color: white;
   text-align: center;
   padding: 15px;
   font-weight: bold;
+}
+
+/* Announcement banner */
+#announcement-banner {
+  margin-top: 8px;
+  background: linear-gradient(135deg, var(--secondary-light), #ffd28a);
+  color: #5a3d00;
+  padding: 8px 12px;
+  border-radius: 6px;
+  max-width: 980px;
+  width: calc(100% - 30px);
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+#announcement-banner .announcement-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#announcement-banner .announcement-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--secondary);
+  border-radius: 50%;
+}
+
+/* Announcements modal */
+.announcements-modal {
+  max-width: 720px;
+}
+
+.announcements-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.announcements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 320px;
+  overflow: auto;
+  margin-bottom: 12px;
+}
+
+.announcement-row {
+  display: grid;
+  grid-template-columns: 1fr 220px 150px;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px;
+  background: var(--background);
+}
+
+.announcement-row .actions {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+#announcement-form-container {
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+textarea#announcement-message {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 10px;
 }
