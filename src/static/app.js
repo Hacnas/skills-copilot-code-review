@@ -416,7 +416,12 @@ document.addEventListener("DOMContentLoaded", () => {
   function confirmDeleteAnnouncement(id) {
     showConfirmationDialog('Delete this announcement?', async () => {
       try {
-        const res = await fetch(`/announcements/${encodeURIComponent(id)}?teacher_username=${encodeURIComponent(currentUser.username)}`, { method: 'DELETE' });
+        const res = await fetch(`/announcements/${encodeURIComponent(id)}`, {
+          method: 'DELETE',
+          headers: {
+            'X-Teacher-Username': currentUser.username
+          }
+        });
         const data = await res.json().catch(() => ({}));
         if (!res.ok) {
           showMessage(data.detail || 'Failed to delete announcement', 'error');
